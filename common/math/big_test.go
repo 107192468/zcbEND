@@ -21,8 +21,7 @@ import (
 	"encoding/hex"
 	"math/big"
 	"testing"
-
-	"lsdk/common"
+	"zcbEND/common"
 )
 
 func TestHexOrDecimal256(t *testing.T) {

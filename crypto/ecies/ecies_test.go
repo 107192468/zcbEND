@@ -40,7 +40,7 @@ import (
 	"math/big"
 	"testing"
 
-	"lsdk/crypto"
+	"zcbEND/crypto"
 )
 
 var dumpEnc bool

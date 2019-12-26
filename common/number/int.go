@@ -19,7 +19,7 @@ package number
 import (
 	"math/big"
 
-	"lsdk/common"
+	"zcbEND/common"
 )
 
 var tt256 = new(big.Int).Lsh(big.NewInt(1), 256)

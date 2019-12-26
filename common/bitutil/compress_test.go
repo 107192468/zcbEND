@@ -20,8 +20,7 @@ import (
 	"bytes"
 	"math/rand"
 	"testing"
-
-	"lsdk/common/hexutil"
+	"zcbEND/common/hexutil"
 )
 
 // Tests that data bitset encoding and decoding works and is bijective.
