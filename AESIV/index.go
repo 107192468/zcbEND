@@ -9,9 +9,9 @@ import (
 )
 
 //AES加密
-func AESBase64Encrypt(origin_data string, key string,iv string)(base64_result string, err error){
+func AESBase64Encrypt(origin_data string, key string, iv string) (base64_result string, err error) {
 	var block cipher.Block
-	if block, err = aes.NewCipher([]byte(key)); err != nil{
+	if block, err = aes.NewCipher([]byte(key)); err != nil {
 		logs.Info(err)
 		return
 	}
@@ -22,23 +22,24 @@ func AESBase64Encrypt(origin_data string, key string,iv string)(base64_result st
 	base64_result = base64.StdEncoding.EncodeToString(dst)
 	return
 }
+
 //AES解密
-func AESBase64Decrypt(encrypt_data string, key string,iv string)(origin_data string, err error){
+func AESBase64Decrypt(encrypt_data string, key string, iv string) (origin_data string, err error) {
 	var block cipher.Block
-	if block, err = aes.NewCipher([]byte(key)); err != nil{
+	if block, err = aes.NewCipher([]byte(key)); err != nil {
 		logs.Info(err)
 		return
 	}
 	encrypt := cipher.NewCBCDecrypter(block, []byte(iv))
 
-	var source [] byte
-	if source, err = base64.StdEncoding.DecodeString(encrypt_data);err != nil{
+	var source []byte
+	if source, err = base64.StdEncoding.DecodeString(encrypt_data); err != nil {
 		logs.Info(err)
 		return
 	}
 	var dst []byte = make([]byte, len(source))
 	encrypt.CryptBlocks(dst, source)
-	origin_data =  string(PKCS5Unpadding(dst))
+	origin_data = string(PKCS5Unpadding(dst))
 	return
 }
 
@@ -48,6 +49,7 @@ func PKCS5Padding(ciphertext []byte, blockSize int) []byte {
 	padtext := bytes.Repeat([]byte{byte(padding)}, padding)
 	return append(ciphertext, padtext...)
 }
+
 //AES--PKCS5解包装
 func PKCS5Unpadding(origData []byte) []byte {
 	length := len(origData)

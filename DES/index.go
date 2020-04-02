@@ -6,8 +6,8 @@ import (
 )
 
 /**
-	不建议使用了 Des加密
- */
+不建议使用了 Des加密
+*/
 func Encrypt(origData, key []byte) ([]byte, error) {
 	if len(origData) < 1 || len(key) < 1 {
 		return nil, errors.New("wrong data or key")
@@ -30,10 +30,8 @@ func Encrypt(origData, key []byte) ([]byte, error) {
 	return out, nil
 }
 
-
-
 /**
-	不建议使用了 Des解密
+不建议使用了 Des解密
 */
 func Decrypt(crypted, key []byte) ([]byte, error) {
 	if len(crypted) < 1 || len(key) < 1 {

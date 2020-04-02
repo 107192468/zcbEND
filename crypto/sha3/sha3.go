@@ -11,7 +11,7 @@ const (
 	// spongeAbsorbing indicates that the sponge is absorbing input.
 	spongeAbsorbing spongeDirection = iota
 	// spongeSqueezing indicates that the sponge is being squeezed.
-	spongeSqueezing 
+	spongeSqueezing
 )
 
 const (

@@ -40,6 +40,6 @@ func PKCS7UnPadding(origData []byte) []byte {
 	return origData[:(length - unpadding)]
 }
 
-func PKCS5padding(cipherText []byte)(error, []byte){
-	return PKCS7Padding(cipherText,8)
+func PKCS5padding(cipherText []byte) (error, []byte) {
+	return PKCS7Padding(cipherText, 8)
 }

@@ -52,8 +52,8 @@ var (
 
 // PublicKey is a representation of an elliptic curve public key.
 type PublicKey struct {
-	X      *big.Int
-	Y      *big.Int
+	X *big.Int
+	Y *big.Int
 	elliptic.Curve
 	Params *ECIESParams
 }

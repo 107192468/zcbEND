@@ -20,6 +20,7 @@ func RsaWithSHA256Base64(origData string, block []byte) (sign string, err error)
 	sign = base64.StdEncoding.EncodeToString(s)
 	return
 }
+
 //验证
 func RsaVerySignWithSha256(data, signData, keyBytes []byte) bool {
 	block, _ := pem.Decode(keyBytes)
